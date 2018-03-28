@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    style="@style/transparent_statusbar_fit"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_title">
+
+        <TextView
+            style="@style/tv_title"
+            android:text="我的书架" />
+
+        <ImageView
+            android:id="@+id/iv_scan"
+            style="@style/iv_title_padding_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/scan" />
+    </RelativeLayout>
+    <com.cy.androidpdf.view.customview.recyclerview.GridRecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/grv"
+        android:paddingLeft="@dimen/padding_content"
+        android:paddingBottom="@dimen/padding_content"
+        android:scrollbars="vertical"/>
+</LinearLayout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    style="@style/transparent_statusbar_fit"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_title"
+        android:background="@drawable/line_bottom">
+
+
+        <TextView
+            style="@style/tv_title"
+            android:textColor="@color/green"
+            android:layout_alignParentLeft="true"
+            android:textSize="@dimen/size_4"
+            android:id="@+id/tv_all"
+            android:paddingLeft="@dimen/padding_content"
+            android:text="全盘查找" />
+
+        <TextView
+            style="@style/tv_title"
+            android:text="书阅" />
+
+        <ImageView
+            android:id="@+id/iv_scan"
+            style="@style/iv_title_padding_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/scan" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/layout_scan"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <com.cy.androidpdf.view.customview.progress.ScanProgressView
+                android:id="@+id/scan_progress"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:color="@color/green" />
+
+            <TextView
+                android:id="@+id/tv_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:textColor="@color/text_deep"
+                android:textSize="@dimen/size_4" />
+            <Button
+                android:id="@+id/btn_scan_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:background="@drawable/blue_shape"
+                android:text="停止扫描"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_4" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <com.cy.androidpdf.view.customview.recyclerview.VerticalRecyclerView
+                android:id="@+id/vrv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:scrollbars="vertical" />
+
+        </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/empty"
+            android:id="@+id/iv_empty"
+            android:visibility="gone"
+            android:scaleType="centerInside"/>
+
+
+    </FrameLayout>
+
+</LinearLayout>

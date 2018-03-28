@@ -1,0 +1,110 @@
+package com.cy.androidpdf.view.customview.selector;
+
+import android.content.Context;
+import android.content.res.TypedArray;
+import android.support.v7.widget.AppCompatRadioButton;
+import android.util.AttributeSet;
+import android.widget.CompoundButton;
+
+import com.cy.androidpdf.R;
+
+
+/**
+ * Created by lenovo on 2017/7/31.
+ */
+
+public class SelectorRadioButton extends AppCompatRadioButton {
+    private int backgroundID, backgroundCheckedID , bg_color,bg_checked_color,
+            textColorID , textColorCheckedID,
+            buttonRes , buttonCheckedRes;
+
+    public SelectorRadioButton(Context context) {
+        this(context, null);
+    }
+
+    public SelectorRadioButton(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        TypedArray arr = context.obtainStyledAttributes(attrs, R.styleable.SelectorCheckBox);
+        backgroundID=arr.getResourceId(R.styleable.SelectorCheckBox_backgroundUnChecked,0);
+        backgroundCheckedID=arr.getResourceId(R.styleable.SelectorCheckBox_backgroundChecked,0);
+
+        if (backgroundID==0){
+            bg_color=arr.getColor(R.styleable.SelectorCheckBox_backgroundUnChecked,0);
+
+        }
+        if (backgroundCheckedID==0){
+            bg_checked_color=arr.getColor(R.styleable.SelectorCheckBox_backgroundChecked,0);
+
+        }
+
+        buttonRes=arr.getResourceId(R.styleable.SelectorCheckBox_buttonUnChecked,0);
+        buttonCheckedRes=arr.getResourceId(R.styleable.SelectorCheckBox_buttonChecked,0);
+
+
+
+        textColorID=arr.getColor(R.styleable.SelectorCheckBox_textColorUnChecked,0);
+        textColorCheckedID=arr.getColor(R.styleable.SelectorCheckBox_textColorChecked,0);
+        arr.recycle();
+
+        if (isChecked()) {
+
+            setResOnChecked();
+
+        } else {
+            setResOnUnChecked();
+
+        }
+        setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    setResOnChecked();
+
+                } else {
+                    setResOnUnChecked();
+
+
+                }
+            }
+        });
+    }
+
+
+    public void setResOnChecked() {
+        if (backgroundCheckedID != 0) {
+
+            setBackgroundResource(backgroundCheckedID);
+        }
+        if (bg_checked_color!=0){
+            setBackgroundColor(bg_checked_color);
+        }
+        if (buttonCheckedRes != 0) {
+            setButtonDrawable(buttonCheckedRes);
+
+        }
+
+
+        if (textColorCheckedID != 0) {
+
+            setTextColor(textColorCheckedID);
+        }
+    }
+
+    public void setResOnUnChecked() {
+        if (backgroundID != 0) {
+
+            setBackgroundResource(backgroundID);
+        }
+        if (bg_color!=0){
+            setBackgroundColor(bg_color);
+        }
+        if (buttonRes != 0) {
+            setButtonDrawable(buttonRes);
+        }
+
+        if (textColorID != 0) {
+
+            setTextColor(textColorID);
+        }
+    }
+}

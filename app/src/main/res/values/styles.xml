@@ -1,0 +1,143 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorPrimaryDark">@color/green</item>
+        <item name="colorAccent">@color/green</item>
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+
+    <style name="StatusBarTransparentTheme" parent="AppTheme"></style>
+    <style name="FullScreenTheme" parent="AppTheme">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="transparent_statusbar_fit">
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:clipToPadding">false</item>
+    </style>
+    <style name="dialog_zoom">
+        <item name="android:windowEnterAnimation">@anim/dialog_scale_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_scale_out</item>
+    </style>
+
+    <style name="ripple_click">
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <!--<style name="ripple_click_border">-->
+    <!--<item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>-->
+    <!--<item name="android:clickable">true</item>-->
+    <!--</style>-->
+
+    <style name="iv_main_tab">
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:paddingTop">4dp</item>
+    </style>
+
+    <style name="tv_main_tab">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/text_deep</item>
+    </style>
+
+    <style name="dialog_anim_bottom">
+        <item name="android:windowEnterAnimation">@anim/dialog_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_bottom_out</item>
+    </style>
+
+    <style name="padding_content">
+        <item name="android:paddingLeft">@dimen/padding_content</item>
+        <item name="android:paddingRight">@dimen/padding_content</item>
+    </style>
+
+    <style name="iv_title_padding_content" parent="ripple_click">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:padding">@dimen/padding_content</item>
+    </style>
+
+    <style name="tv_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/text_deep</item>
+        <item name="android:textSize">@dimen/size_2</item>
+    </style>
+
+    <style name="padding_content_small">
+        <item name="android:paddingLeft">@dimen/padding_small</item>
+        <item name="android:paddingRight">@dimen/padding_small</item>
+    </style>
+
+    <style name="iv_left_right">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:scaleType">centerInside</item>
+
+        <item name="android:paddingLeft">@dimen/padding_content</item>
+        <item name="android:paddingRight">@dimen/padding_content</item>
+    </style>
+
+    <style name="iv_head_style">
+        <item name="android:layout_width">@dimen/head_width</item>
+        <item name="android:layout_height">@dimen/head_width</item>
+        <item name="android:scaleType">centerCrop</item>
+
+    </style>
+    <style name="chat_iv_head_style">
+        <item name="android:layout_width">@dimen/chat_head_width</item>
+        <item name="android:layout_height">@dimen/chat_head_width</item>
+        <item name="android:scaleType">centerCrop</item>
+
+    </style>
+
+    <style name="dialog_anim_top">
+        <item name="android:windowEnterAnimation">@anim/dialog_top_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_top_out</item>
+    </style>
+
+    <style name="tab_tv_size">
+        <item name="android:textSize">@dimen/size_3</item>
+    </style>
+    <style name="tab_tv_size_big">
+        <item name="android:textSize">100sp</item>
+    </style>
+
+    <style name="chat_bubblelayout_tv">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/height_min_chat_BubbleLayout</item>
+        <item name="android:padding">@dimen/padding_content</item>
+    </style>
+    <!--<style name="chat_bubblelayout_iv">-->
+    <!--<item name="android:layout_width">wrap_content</item>-->
+    <!--<item name="android:layout_height">wrap_content</item>-->
+    <!--<item name="android:minHeight">@dimen/height_min_chat_BubbleLayout</item>-->
+    <!--<item name="android:maxWidth">@dimen/width_max_chat_BubbleLayout</item>-->
+    <!--<item name="android:maxHeight">@dimen/width_max_chat_BubbleLayout</item>-->
+    <!--</style>-->
+    <style name="chat_tv">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/text_deep</item>
+        <item name="android:textSize">@dimen/size_3</item>
+        <item name="android:lineSpacingExtra">@dimen/padding_small</item>
+    </style>
+    <style name="chat_iv">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+</resources>
